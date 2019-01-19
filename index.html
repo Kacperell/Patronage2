@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rent a Hero </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="HeaderNav">
+            <div class="HeaderNav__LogoHamburgerBox">
+                <a class="HeaderNav__LogoHamburgerBox__linkLogo">
+                    <img src="images/logo.png" class="HeaderNav__LogoHamburgerBox_Logo" alt="logo"></a>
+                <div class="HeaderNav__iconHamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <ul class="HeaderNav__List">
+                <li class="HeaderNav__List--link " id="dodaj"><a>DODAJ HEROSA</a></li>
+                <li class="HeaderNav__List--link" id="edytuj"><a>EDYTUJ HEROSA</a></li>
+                <li class="HeaderNav__List--link" id="usun"><a>USUŃ HEROSA</a></li>
+                <li class="HeaderNav__List--link" id="usunWszystko"><a>WYCZYŚĆ BAZĘ</a></li>
+                <li class="HeaderNav__List--link"><a>WCZYTAJ HERSOSÓW</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="sectionForm add off">
+            <form class="SectionForm__form">
+                Doddaj Herosa
+                <input type="text" class="form__name" placeholder="Nazwa Bohatera" maxlength="25" required />
+                <input type="text" class="form__image" placeholder="Adres URL zdjęcia" required />
+                <input type="number" class="form__price" placeholder="Cena wynajmu /h" min="1" max="999999" required />
+                <textarea placeholder="Opis Bohatera" class="form__description" maxlength="140" required></textarea>
+                <button type="submit" class="AddHero__buttonForm">Submit</button>
+            </form>
+        </section>
+        <section class="sectionForm edit off ">
+            <form class="SectionForm__form">
+                Edytuj Herosa
+                <select name="selectHeroToEdit" class="selectToEdit">
+                </select>
+                <input type="text" class="form__nameEdit" placeholder="Nazwa Bohatera" maxlength="25" required />
+                <input type="text" class="form__imageEdit" placeholder="Adres URL zdjęcia" required />
+                <input type="number" class="form__priceEdit" placeholder="Cena wynajmu /h" min="1" max="999999"
+                    required />
+                <textarea placeholder="Opis Bohatera" class="form__descriptionEdit" maxlength="140" required></textarea>
+                <button type="submit" class="AddHero__buttonForm">Edytuj</button>
+            </form>
+        </section>
+
+        <section class="sectionForm delete off ">
+            <form class="SectionForm__form ">
+                Usuń Herosa
+                <select class="selectHeroToDelete">
+                </select>
+                <button type="submit" class="AddHero__buttonForm delete">Usuń</button>
+            </form>
+        </section>
+
+        <section class="basket ">
+            <div class="basket__Summary">
+                <span class="basket_Summary__Title basket_Summary__Title__underline">Koszyk</span>
+                <span class="basket_Summary__Title ">Do zaplaty:<span class="basket_Summary__Title priceRed"></span>
+                </span>
+            </div>
+            <div class="basket__Products">
+            </div>
+            <img src="images/scroll.png" alt="scroll horizontal cursor" class=basket__imgScroll>
+        </section>
+
+        <section class="heroesList">
+            <div class="modal">
+                <div class="heroInModal">
+                    <img src="${hero.image}" alt="${hero.name}" class="heroInModal__image">
+                    <div class="heroInModal_info">
+                        <span class="heroInModal__name">I'M THE ${hero.name}!</span>
+                        <span class="heroInModal__description">${hero.description} </span>
+                        <span class="heroInModal__price">WYNAJEM: ${hero.price} ZŁ/H</span>
+                        <button class="heroInModal__add "> DODAJ DO KOSZYKA </button>
+                    </div>
+                    <img src="images/exit.png" alt="exit" class="heroInModal__exit">
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        Need a Hero-Pure JS/CSS Aplikacja do ćwiczenia nabytej wiedzy o JavaScript
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
